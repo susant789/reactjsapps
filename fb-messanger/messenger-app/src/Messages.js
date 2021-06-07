@@ -13,7 +13,7 @@ function Messages({user,message}) {
                         varient="h5"
                         component="h2"
                     >
-                        {message.user}:{message.text}
+                        {message.user}:{message.message}
                     </Typography>
                 </CardContent>
             </Card>

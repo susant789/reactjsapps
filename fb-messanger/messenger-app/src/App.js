@@ -3,6 +3,7 @@ import './App.css';
 import { Button, FormControl, Input, InputLabel } from '@material-ui/core';
 import Messages from "./Messages.js"
 import "./Message.css"
+import db from "./firebase";
 
 
 function App() {
@@ -11,15 +12,29 @@ function App() {
     setuser(prompt("enter your name"))
     },[])
 
+  useEffect(()=>{
+    db.collection("messages").onSnapshot(snap=>{
+      setmessage(snap.docs.map(doc => doc.data()))
+    })
+    },[])
+
+
   const [input,setinput] =useState("")
-  const [message, setmessage] = useState([{user:"susant",text:"hi im here"},{user:"sapna",text:"hi im here too"}])
+  const [message, setmessage] = useState("")
   const [user,setuser] = useState("");
   console.log(input)
 
 
   const sendmessage=(e)=>{
     e.preventDefault();
-    setmessage([...message,{user:user,text:input}])
+    
+    db.collection("messages").add({
+      message:message,
+      user:user,
+    
+    })
+
+    setmessage([...message,{user:user,message:input}])
     console.log(message)
     setinput("")
   }
