@@ -29,8 +29,9 @@ function App() {
     e.preventDefault();
     
     db.collection("messages").add({
-      message:message,
+      message:input,
       user:user,
+      
     
     })
 
