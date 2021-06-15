@@ -1,0 +1,6 @@
+material-ui-icons default class 
+.MuiSvgIcon-root 
+it time saving
+.sidebar_profileIcons > .MuiSvgIcon-root {
+    padding: 10px;
+}

@@ -1,0 +1,39 @@
+banner bottom styling
+.bottom-fade{
+    
+    height: 6.3rem;
+    background-image: linear-gradient(
+        180deg,
+        transparent,
+        rgba(37,37,37,.61),#111);
+}
+
+Big paragraph continuation with ... 
+        function truncate(str,n){
+            return str?.length > n? str.substr(0,n-1) + "..." : str;
+        }
+
+if else in short
+{movie?.title || movie?.name || movie?.orginal_name}
+
+inline-styling
+style={{
+            backgroundSize:"cover",
+            backgroundImage :`url("${baseline}${movie?.backdrop_path}")`,
+            backgroundPosition : "center center",
+        }
+
+Searching movie trailers by name using movieTrailer package.
+ const handleclick =(movie)=>{
+          if(trailerUrl){
+              settrailerUrl("")
+          }else{
+              movieTrailer(movie?.name || "")
+              .then(url=>{
+                const urlParam = new URLSearchParams(new URL(url).search);
+                settrailerUrl(urlParam.get("v"));
+              })
+              .catch(err => console.log(err));
+          }
+
+      }
