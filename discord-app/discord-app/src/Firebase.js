@@ -1,11 +1,3 @@
-material-ui-icons default class 
-.MuiSvgIcon-root 
-it time saving
-.sidebar_profileIcons > .MuiSvgIcon-root {
-    padding: 10px;
-}
-
-firebase
 import firebase from "firebase"
 
 const firebaseConfig = {
@@ -24,8 +16,5 @@ const firebaseConfig = {
   const provider = new firebase.auth.GoogleAuthProvider();
 
 
-implicit export 
   export {auth,provider};
-
-  explicit export
   export default db
