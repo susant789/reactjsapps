@@ -29,3 +29,22 @@ implicit export
 
   explicit export
   export default db
+
+  //to dispatch(save something in redux use dispatch)
+  dispatch(setChannelInfo({
+            channelId:id,
+            channelName:channelname,
+            })
+        )
+        while dispatching we have to import reducer state in appSlice case its setChannelInfo
+
+to use data from redux
+useSelector
+const user = useSelector(selectUser)
+   const channelId = useSelector(selectChannelId)
+   const channelName = useSelector(selectChannelName)
+   
+   we have to import 
+   export const selectChannelId = (state) => state.app.channelId;
+  export const selectChannelName = (state) => state.app.channelName;  
+  both selectors

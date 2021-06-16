@@ -36,4 +36,12 @@
 
 .Chat__messages{
     flex: 1;
+    overflow: scroll;
+}
+.Chat__messages::-webkit-scrollbar{
+    display: none;
+}
+.Chat__messages{
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }

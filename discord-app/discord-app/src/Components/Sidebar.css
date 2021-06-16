@@ -16,6 +16,14 @@
 }
 .sidebar__channels{
     flex: 1;
+    overflow:scroll;
+}
+.sidebar__channels::-webkit-scrollbar{
+    display: none;
+}
+.sidebar__channels{
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 .sidebar__channelsHeader{
     display: flex;
