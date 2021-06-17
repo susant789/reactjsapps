@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
+import { selectCars } from "../features/car/carSlice";
+import { useSelector } from "react-redux";
 
 function Header() {
 
@@ -19,16 +21,20 @@ function Header() {
             };
         },[]);
 
+        const cars = useSelector(selectCars);
+        console.log(cars)
+
     return (
         <Nav className={`${handle && "nav-black"}`}>
             <a href="#">
                 <img src="/images/logo.svg" alt="tesla" />
             </a>
             <Menu>
-                <a href="#">Model S</a>
-                <a href="#">Model 3</a>
-                <a href="#">Model Y</a>
-                <a href="#">Model X</a>
+                {
+                    cars && cars.map((car,index)=>{
+                        return <a key={index} href="#">{car}</a>
+                    })
+                }
             </Menu>
             <RightMenu>
                 <a href="#">Shop</a>
@@ -44,7 +50,12 @@ function Header() {
                 <Close >
                     <CloseIcon onClick={()=>setburgerstatus(false)} />
                 </Close>
-                <li>Model 3</li>
+                {
+                    cars && cars.map((car,index)=>{
+                        return <li><a key={index} href="#">{car}</a></li>
+                    })
+                }
+                
                 <li>Order now</li>
                 <li>Inventory</li>
                 <li>Solar panel</li>
@@ -64,7 +75,7 @@ export default Header
 
 const Nav = styled.div`
     position:fixed;
-    z-indez:0;
+    z-index:9;
     padding:20px 30px;
     display:flex;
     align-items:center;
@@ -125,6 +136,10 @@ const BergerMenu = styled.div`
         color:#666;
         font-weight:600;
         transition: all .1s;
+        cursor:pointer;
+    }
+    li a{
+        color:#666;
     }
     li:hover{
         transform: scale(1.05);

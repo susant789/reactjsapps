@@ -43,6 +43,7 @@ const Wrap = styled.div`
     text-align:center;
     display:grid;
     place-items:center;
+    z-index:-1;
 `
 
 const TextItem = styled.div`
