@@ -20,7 +20,10 @@ function Checkout() {
                         <h4>you have to add a items in basket for display items here.</h4>
                     </div>
             ):(
-                    <div>
+                    <div className="checkout__product"
+                    style={{padding:"10px"}}>
+                        <h1
+                        style={{marginBottom:"10px"}}>Your shopping cart.</h1>
                         {
                             basket.map(item=>(
                                 <CheckoutProduct 

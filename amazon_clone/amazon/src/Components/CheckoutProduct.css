@@ -1,0 +1,25 @@
+.CheckoutProduct__img{
+    width: 250px;
+    object-fit: contain;
+    margin-right: 15px;
+}
+.CheckoutProduct{
+    display: flex;
+    padding: 10px;
+}
+.CheckoutProduct__btn{
+    background-color: #febd69;
+    border:1px solid;
+    border-color: #a88734 #9c7e31 #846a29;
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+.product__title h3{
+    font-weight: 200;
+    font-size: 2rem;
+}
+.product__info{
+    max-height: 200px;
+    
+}
