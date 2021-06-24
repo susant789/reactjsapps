@@ -9,21 +9,33 @@ function Home() {
             <div className="home__row">
                 <Product title="CP3 Gaming Keyboard RGB Wired Keyboard Anti-ghosting 87 Key Mechanical Keyboard with Blue Switches for Laptop, Windows, PC Games and Work"
                 price="20.00"
-                rating={5}/>
+                rating={5}
+                img="https://m.media-amazon.com/images/I/71pPoxFzUSL._AC_UY218_.jpg"/>
                 <Product title="CP3 Gaming Keyboard RGB Wired Keyboard Anti-ghosting 87 Key Mechanical Keyboard with Blue Switches for Laptop, Windows, PC Games and Work"
                 price="20.00"
-                rating={5}/>
+                rating={5}
+                img="https://m.media-amazon.com/images/I/71pPoxFzUSL._AC_UY218_.jpg"/>
                 <Product title="CP3 Gaming Keyboard RGB Wired Keyboard Anti-ghosting 87 Key Mechanical Keyboard with Blue Switches for Laptop, Windows, PC Games and Work"
                 price="20.00"
-                rating={5}/>
+                rating={5}
+                img="https://m.media-amazon.com/images/I/71pPoxFzUSL._AC_UY218_.jpg"/>
+                
             </div>
             <div className="home__row">
+            <Product title="CP3 Gaming Keyboard RGB Wired Keyboard Anti-ghosting 87 Key Mechanical Keyboard with Blue Switches for Laptop, Windows, PC Games and Work"
+                price="20.00"
+                rating={5}
+                img="https://m.media-amazon.com/images/I/71pPoxFzUSL._AC_UY218_.jpg"/>
                 <Product title="CP3 Gaming Keyboard RGB Wired Keyboard Anti-ghosting 87 Key Mechanical Keyboard with Blue Switches for Laptop, Windows, PC Games and Work"
                 price="20.00"
-                rating={5}/>
-                <Product title="CP3 Gaming Keyboard RGB Wired Keyboard Anti-ghosting 87 Key Mechanical Keyboard with Blue Switches for Laptop, Windows, PC Games and Work"
+                rating={5}
+                img="https://m.media-amazon.com/images/I/71pPoxFzUSL._AC_UY218_.jpg"/>
+            </div>
+            <div className="home__row">
+            <Product title="CP3 Gaming Keyboard RGB Wired Keyboard Anti-ghosting 87 Key Mechanical Keyboard with Blue Switches for Laptop, Windows, PC Games and Work"
                 price="20.00"
-                rating={5}/>
+                rating={5}
+                img="https://m.media-amazon.com/images/I/71pPoxFzUSL._AC_UY218_.jpg"/>
             </div>
             
         </div>

@@ -1,7 +1,8 @@
 import './App.css';
 import { BrowserRouter as Router,Switch,Route } from "react-router-dom";
 import Header from './Components/Header';
-import Home from "./Components/Home"
+import Home from "./Components/Home";
+import Checkout from './Components/Checkout';
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
           </Route>
           <Route exact path="/Checkout">
           <Header/>
-            <h1>Checkout</h1>
+          <Checkout />
           </Route>
           <Route exact path="/">
             <Header/>
