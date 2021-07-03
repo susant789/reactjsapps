@@ -23,7 +23,8 @@ function Checkout() {
                     <div className="checkout__product"
                     style={{padding:"10px"}}>
                         <h1
-                        style={{marginBottom:"10px"}}>Your shopping cart.</h1>
+                        style={{marginBottom:"10px"}}
+                        >Your shopping basket.</h1>
                         {
                             basket.map(item=>(
                                 <CheckoutProduct 

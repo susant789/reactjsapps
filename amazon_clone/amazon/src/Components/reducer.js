@@ -13,7 +13,7 @@ function reducer(state,action){
             };
         case "remove_from_basket":
 
-            return {state};
+            return {...state};
         default:
             return state;
     }
