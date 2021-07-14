@@ -6,6 +6,11 @@ export const initialState = {
 function reducer(state,action){
     console.log(action)
     switch(action.type){
+        case "user":
+            return{
+                ...state,
+                user:action.user,
+            }
         case "add_to_basket":
             return {
                 ...state,//keep the previous data of the state
