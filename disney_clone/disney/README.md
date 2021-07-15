@@ -1,3 +1,5 @@
+this website has been hosted in firebase(https://disneyclone-70534.web.app) plz do visit 😄🔥
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

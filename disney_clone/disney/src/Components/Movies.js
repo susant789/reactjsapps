@@ -1,37 +1,24 @@
 import React from 'react'
 import styled from "styled-components"
+import {useSelector} from "react-redux"
+import {selectMovies} from "../Features/Movies/movieSlice"
+import {Link} from "react-router-dom"
 
 function Movies() {
+
+    const movies = useSelector(selectMovies);
+
     return (
         <Container>
             <h1>Recommended for You</h1>
             <Section>
-                <Wrap>
-                    <img src="http://m.gettywallpapers.com/wp-content/uploads/2020/02/KGF-2-Wallpaper-ForLaptop.jpg"/>
-                </Wrap>
-                <Wrap>
-                    <img src="http://m.gettywallpapers.com/wp-content/uploads/2020/02/KGF-2-Wallpaper-ForLaptop.jpg"/>
-                </Wrap>
-                <Wrap>
-                    <img src="http://m.gettywallpapers.com/wp-content/uploads/2020/02/KGF-2-Wallpaper-ForLaptop.jpg"/>
-                </Wrap>
-                <Wrap>
-                    <img src="http://m.gettywallpapers.com/wp-content/uploads/2020/02/KGF-2-Wallpaper-ForLaptop.jpg"/>
-                </Wrap>
-            </Section>
-            <Section>
-                <Wrap>
-                    <img src="http://m.gettywallpapers.com/wp-content/uploads/2020/02/KGF-2-Wallpaper-ForLaptop.jpg"/>
-                </Wrap>
-                <Wrap>
-                    <img src="http://m.gettywallpapers.com/wp-content/uploads/2020/02/KGF-2-Wallpaper-ForLaptop.jpg"/>
-                </Wrap>
-                <Wrap>
-                    <img src="http://m.gettywallpapers.com/wp-content/uploads/2020/02/KGF-2-Wallpaper-ForLaptop.jpg"/>
-                </Wrap>
-                <Wrap>
-                    <img src="http://m.gettywallpapers.com/wp-content/uploads/2020/02/KGF-2-Wallpaper-ForLaptop.jpg"/>
-                </Wrap>
+                {movies && movies.map(movie=>(
+                    <Wrap key={movie.id}>
+                        <Link to={`/detail/${movie.id}`}>
+                            <img src={movie.cardImg}/>
+                        </Link>
+                    </Wrap>
+                ))}
             </Section>
         </Container>
     )

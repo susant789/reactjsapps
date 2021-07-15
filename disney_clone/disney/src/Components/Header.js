@@ -1,19 +1,34 @@
 import React from 'react'
 import styled from "styled-components"
+import {Link} from "react-router-dom"
+import { selectUser } from "../Features/Movies/userSlice";
+import { useSelector,useDispatch } from "react-redux"
+import {signout } from "../Features/Movies/userSlice"
 
 function Header() {
+    const dispatch = useDispatch();
+    const user = useSelector(selectUser);
+    const Signout=()=>{
+        dispatch(signout())
+    }
+    console.log(user)
     return (
         <Navbar>
-            <Logo src="/images/logo.svg"/>
-            <Menu>
-                <a href="#"><img src="/images/home-icon.svg"/><span>Home</span></a>
-                <a href="#"><img src="/images/search-icon.svg"/><span>Search</span></a>
-                <a href="#"><img src="/images/watchlist-icon.svg"/><span>Watchlist</span></a>
-                <a href="#"><img src="/images/original-icon.svg"/><span>Original</span></a>
-                <a href="#"><img src="/images/movie-icon.svg"/><span>Movie</span></a>
-                <a href="#"><img src="/images/series-icon.svg"/><span>Series</span></a>
-            </Menu>
-            <Profile src="/images/mypic.jpg"/>
+            <Link to = "/"><Logo src="/images/logo.svg"/></Link>
+            {
+                !user ? <Link to = "/login"><Login>Login</Login></Link> : 
+                <>
+                    <Menu>
+                        <a href="#"><img src="/images/home-icon.svg"/><span>Home</span></a>
+                        <a href="#"><img src="/images/search-icon.svg"/><span>Search</span></a>
+                        <a href="#"><img src="/images/watchlist-icon.svg"/><span>Watchlist</span></a>
+                        <a href="#"><img src="/images/original-icon.svg"/><span>Original</span></a>
+                        <a href="#"><img src="/images/movie-icon.svg"/><span>Movie</span></a>
+                        <a href="#"><img src="/images/series-icon.svg"/><span>Series</span></a>
+                    </Menu>
+                    <Profile onClick={Signout} src={user.photo}/>
+                </>
+            }
         </Navbar>
     )
 }
@@ -25,6 +40,7 @@ const Navbar = styled.div`
     align-items:center;
     padding:0 3rem;
     justify-content:space-between;
+    z-index:100;
 `
 const Logo = styled.img`
     width:9rem;
@@ -80,5 +96,22 @@ const Profile = styled.img`
     cursor:pointer;
 
 `
+
+const Login = styled.div`
+    border: .1rem solid #ddd;
+    padding:.5rem 2rem;
+    font-size:2rem;
+    text-transform:uppercase;
+    letter-spacing:.2rem;
+    margin-right:2rem;
+    transition:all 250ms;
+    border-radius:.2rem;
+
+    &:hover{
+        color:#000;
+        background:#ddd;
+        transition:all 250ms;
+    }
+`;
 export default Header
 

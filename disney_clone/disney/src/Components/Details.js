@@ -1,14 +1,38 @@
-import React from "react";
+import React,{ useState,useEffect } from "react";
 import styled from "styled-components";
+import {useParams} from "react-router-dom"
+import db from "../firebase.js"
 
 function Details() {
+
+  const { id } = useParams();
+  const [ movie,setMovie ] = useState()
+  
+  useEffect(()=>{
+    //grab the data from db
+    db.collection("movies")
+    .doc(id)
+    .get()
+    .then((doc)=>{
+        if(doc.exists){
+        //states are used for individual components whereas redux are used for whole website
+        //save data in movie state for every movie
+            setMovie(doc.data());
+        }else{
+          //redirect to homepage
+        }
+    })
+  }, [])
+ 
   return (
     <Container>
-      <Background>
-        <img src="http://m.gettywallpapers.com/wp-content/uploads/2020/02/KGF-2-Wallpaper-ForLaptop.jpg" />
+      {movie && (
+        <>
+          <Background>
+        <img src={movie.backgroundImg} />
       </Background>
       <Title>
-        <img src="/images/viewers-disney.png" />
+        <img src={movie.titleImg} />
       </Title>
       <Controls>
         <Play>
@@ -27,17 +51,13 @@ function Details() {
         </Group>
       </Controls>
       <Subtitle>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione,
-        excepturi?
+        {movie.subTitle}
       </Subtitle>
       <Desc>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
-        perferendis libero facere eaque molestias dolorum sequi sint, officia
-        aliquid veritatis. Lorem, ipsum dolor sit amet consectetur adipisicing
-        elit. Distinctio, dolorem magni perspiciatis aliquam voluptates
-        consectetur! Assumenda nam cumque vitae? Magnam quidem facere veritatis
-        molestiae perspiciatis voluptate illum a perferendis at.
+        {movie.description}
       </Desc>
+        </>
+      )}
     </Container>
   );
 }
@@ -45,7 +65,7 @@ function Details() {
 const Container = styled.div`
   min-height: calc(100vh - 8rem);
   position: relative;
-  padding: 0 4.5rem;
+  padding: 0 4rem;
 `;
 const Background = styled.div`
   position: fixed;
@@ -62,10 +82,9 @@ const Background = styled.div`
   }
 `;
 const Title = styled.div`
-  width: 25vw;
-  height:35vh;
-  // margin-left: -8rem;
-  // margin-top: 2rem;
+  width: 40vw;
+  object-fit:contain;
+  margin:2rem 0 2rem 4rem;
   img {
     width: 100%;
     height: 100%;
@@ -119,12 +138,11 @@ const Add = styled.button`
 const Group = styled(Add)``;
 
 const Subtitle = styled.div`
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   margin-left: 4rem !important;
   margin:2rem 0;
 
 `;
-
 const Desc = styled.div`
   font-size: 1.5rem;
   width: 80%;
