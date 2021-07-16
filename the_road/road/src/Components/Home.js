@@ -33,6 +33,7 @@ const Container = styled.div`
     margin:3.5rem;
     background-color:var(--secondary-color);
     box-shadow:0 1rem 3rem var(--grey-color);
+    overflow:hidden;
 `;
 const Header = styled.div`
     width:100%;
@@ -40,9 +41,11 @@ const Header = styled.div`
     background:linear-gradient(rgba(18,113,255,.5),rgba(18,113,255,.3)),url(${headerBg})center no-repeat;
     background-size:cover;
     position:relative;
+    perspective:100rem;
     img{
         width:46%;
-    }
+        animation:balloon 200s infinite;
+    };
 `;
 const Header_text = styled.div`
     text-align:center;
@@ -67,12 +70,41 @@ const Logo = styled.div`
     top:4rem;
     right:4rem;
     color:var(--primary-color);
-    letter-spacing:1rem;
-    display:flex;
+    h1{
+        display:flex;
+    }
     h1 span{
-        font-size:2rem;
+        font-size:1.5rem;
+        text-transform:uppercase;
         background:var(--white-color);
-        display:block;
+        display:flex;
+        margin:.5rem;
+        justify-content:center;
+        align-items:center;
+        width:3rem;
+        height:3rem;
+        border-radius:50%;
+    }
+    h1 span:nth-child(1){
+        animation:letter-drop 5s .1s infinite;
+    }
+    h1 span:nth-child(2){
+        animation:letter-drop 5s .2s infinite;
+    }
+    h1 span:nth-child(3){
+        animation:letter-drop 5s .3s infinite;
+    }
+    h1 span:nth-child(4){
+        animation:letter-drop 5s .4s infinite;
+    }
+    h1 span:nth-child(5){
+        animation:letter-drop 5s .5s infinite;
+    }
+    h1 span:nth-child(6){
+        animation:letter-drop 5s .6s infinite;
+    }
+    h1 span:nth-child(7){
+        animation:letter-drop 5s .7s infinite;
     }
 `;
 
