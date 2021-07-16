@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Vollkorn:wght@400;500;600;700;800;900&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  outline: none;
+  font-family: 'Vollkorn', serif;
+}
+
+html{
+  font-size:62.5%;
+}
+
+:root{
+  --primary-color:#2b81e4;
+  --secondary-color:#eee;
+  --white-color:#fff;
+  --grey-color:#555;
+  --l-grey-color:#777;
+}
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
