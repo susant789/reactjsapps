@@ -2,30 +2,34 @@ import React from 'react';
 import styled from 'styled-components';
 import airBalloon from '../images/air-balloon.png';
 import headerBg from "../images/header-bg.jpg"
+import Section2 from './Section2';
 
 
 function Home() {
     return (
-        <Container>
-            <Header className="center">
-                <Header_text>
-                    <h1>Around the world</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore voluptatem molestiae!</p>
-                </Header_text>
-                <img src={airBalloon} alt="balloon" />
-                <Logo>
-                    <h1>
-                        <span>T</span>
-                        <span>h</span>
-                        <span>e</span>
-                        <span>r</span>
-                        <span>o</span>
-                        <span>a</span>
-                        <span>d</span>
-                    </h1>
-                </Logo>
-            </Header>
-        </Container>
+        <>
+            <Container>
+                <Header className="center">
+                    <HeaderText>
+                        <h1>Around the world</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore voluptatem molestiae!</p>
+                    </HeaderText>
+                    <img src={airBalloon} alt="balloon" />
+                    <Logo>
+                        <h1>
+                            <span>T</span>
+                            <span>h</span>
+                            <span>e</span>
+                            <span>r</span>
+                            <span>o</span>
+                            <span>a</span>
+                            <span>d</span>
+                        </h1>
+                    </Logo>
+                </Header>
+            </Container>
+            <Section2 />
+        </>
     )
 }
 
@@ -47,7 +51,7 @@ const Header = styled.div`
         animation:balloon 200s infinite;
     };
 `;
-const Header_text = styled.div`
+const HeaderText = styled.div`
     text-align:center;
     text-transform:uppercase;
     letter-spacing:.1rem;
