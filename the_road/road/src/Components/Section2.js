@@ -22,7 +22,7 @@ function Section2() {
 
 const Container = styled.div`
     padding:4rem 0 8rem 0;
-    height:100vh;
+    height:105vh;
 `;
 const SectionH = styled.div`
     margin:2rem 0 2rem 0;
@@ -35,7 +35,7 @@ const CardWrapper = styled.div`
     display:flex;
     justify-content:space-evenly;
     align-items:center;
-    margin-top:10rem;
+    margin-top:15rem;
 `;
 
 export default Section2

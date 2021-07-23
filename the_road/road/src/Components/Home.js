@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import airBalloon from '../images/air-balloon.png';
 import headerBg from "../images/header-bg.jpg"
 import Section2 from './Section2';
-
+import Section3 from './Section3';
 
 function Home() {
     return (
         <>
-            <Container>
+            <Section1>
                 <Header className="center">
                     <HeaderText>
                         <h1>Around the world</h1>
@@ -27,13 +27,14 @@ function Home() {
                         </h1>
                     </Logo>
                 </Header>
-            </Container>
+            </Section1>
             <Section2 />
+            <Section3 />
         </>
     )
 }
 
-const Container = styled.div`
+const Section1 = styled.div`
     margin:3.5rem;
     background-color:var(--secondary-color);
     box-shadow:0 1rem 3rem var(--grey-color);
