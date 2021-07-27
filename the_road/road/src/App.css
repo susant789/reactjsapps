@@ -69,3 +69,20 @@ html{
   }
 }
 
+@keyframes contact-bg {
+  0%{
+    background-color: #2b81e4;
+  }
+  25%{
+    background-color: #b92be4;
+  }
+  50%{
+    background-color: #e42b53;
+  }
+  75%{
+    background-color: #e4942b;
+  }
+  100%{
+    background-color: #e4e12b;
+  }
+}

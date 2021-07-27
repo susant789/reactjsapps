@@ -4,6 +4,8 @@ import airBalloon from '../images/air-balloon.png';
 import headerBg from "../images/header-bg.jpg"
 import Section2 from './Section2';
 import Section3 from './Section3';
+import Section4 from './Section4';
+import Footer from './Footer';
 
 function Home() {
     return (
@@ -29,7 +31,11 @@ function Home() {
                 </Header>
             </Section1>
             <Section2 />
-            <Section3 />
+            <Container>
+                <Section3 />
+                <Section4 />
+            </Container>
+            <Footer/>
         </>
     )
 }
@@ -112,5 +118,11 @@ const Logo = styled.div`
         animation:letter-drop 5s .7s infinite;
     }
 `;
+
+const Container = styled.div`
+    margin:3.5rem;
+    box-shadow:0 1rem 3rem var(--grey-color);
+`;
+
 
 export default Home

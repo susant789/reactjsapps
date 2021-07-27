@@ -5,7 +5,6 @@ import video from "../images/video.mp4"
 
 function Section3() {
     return (
-        <Stories >
             <StoriesWrap className="center">
                 <VideoContainer>
                     <video src={video} type="video/mp4" autoPlay muted loop></video>
@@ -13,15 +12,9 @@ function Section3() {
                 <Story />
                 <Story />
             </StoriesWrap>
-        </Stories>
     )
 }
 
-const Stories = styled.div`
-    margin:3.5rem;
-    background-color:var(--secondary-color);
-    box-shadow:0 1rem 4rem var(--grey-color);
-`;
 
 const StoriesWrap = styled.div`
     width:100%;
